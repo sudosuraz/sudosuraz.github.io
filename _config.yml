@@ -9,12 +9,12 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: kolkata/asia
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: sudossecurity | The Cyber Security Blog # the main title
+title: sudosuraj | Weirdo Security Nerd # the main title
 
 tagline: by sudosuraj # it will display as the sub-title
 
@@ -70,10 +70,10 @@ theme_mode:  [dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
+img_cdn: "https://avatars.githubusercontent.com"
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "https://avatars.githubusercontent.com/u/81553118?v=4"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
