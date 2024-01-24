@@ -3,7 +3,10 @@ title: iOS Bug Bounty Part 1
 author: sudosuraj
 date: 2024-01-24 01:36:15 +0530
 categories: [iOS]
-tags: [iOS, Mobile Apllication, bugbounty]
+tags: [iOS, Mobile Application, bugbounty]
+image:
+  path: /assets/img/headers/header1.jpg
+  alt: ios pentesting
 ---
 
 #  iOS Bug Bounty Part 1
