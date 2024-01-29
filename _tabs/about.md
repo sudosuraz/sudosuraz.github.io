@@ -7,9 +7,9 @@ order: 4
 ---
 <base target="_blank"> 
 
-## **<center> Hii 👋, I am Suraj Sharma </center>**
-#### <center> also known as sudosuraj on Internet :) </center>
-#### <center> Weirdo Security Nerd | Penetration tester </center>
+## **Hii 👋, I am Suraj Sharma**
+####  also known as 0xbug on Internet :) 
+####  Weirdo Security Nerd | Penetration tester
 
 
 ### Certifications: 
