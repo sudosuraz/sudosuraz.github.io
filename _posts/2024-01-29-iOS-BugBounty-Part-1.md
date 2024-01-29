@@ -1,4 +1,5 @@
 ---
+layout: post
 title:  iOS Bug Bounty Part 1
 author:  sudosuraj
 date:  2024-01-24
