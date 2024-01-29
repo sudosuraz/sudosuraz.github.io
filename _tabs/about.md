@@ -29,5 +29,3 @@ order: 4
 - [**Bugcrowd**](https://bugcrowd.com/sudosuraj)
 - [**TryHackMe**](https://tryhackme.com/p/Suraz)
 - [**HackTheBox**](https://app.hackthebox.com/profile/539268)
-
-{: .prompt-tip }
