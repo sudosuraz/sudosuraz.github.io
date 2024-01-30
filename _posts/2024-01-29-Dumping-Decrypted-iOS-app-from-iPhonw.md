@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  iOS Bug Bounty Part 1
+title:  Dumping Decrypted iOS app from iPhone
 author:  sudosuraj
 date:  2024-01-24
 categories:  [iOS]
@@ -11,33 +11,30 @@ image:
 ---
 
 
-#  iOS Bug Bounty Part 1
+#  Dumping Decrypted iOS app from iPhone
 ## Introduction
 Hello Friend!
 I am sudosuraj and currently learnig iOS penetration testing, so I thought I should document
 my journey so I can track my progress and also it will help other new bies to get into iOS hacking!
 So lets dive in!
 
-##  What is an iOS app
-
-An iOS app is just like apk in android, its a zipped structured of all code (app binary) and important
-static data files that are required to successfully run an app. The iOS app has .ipa extention and every iDevice
-and iDrivers recognize this extention as app in which contains the actual app binary. 
-
-##  Dumping Decrypted iOS app from idevice
+##  Requirements
 Every installed app in iPhone decrypts themselve during run, so having decrypted IPA for static analysis 
 makes it easier to understand the code and also helps to uncover more bugs.
 So lets start, first thing you need some require tools to be set.
-> 1. In iOS device, make sure you've installed **frida**, **openssh** using **cydia**.
+1. In iOS device, make sure you've installed **frida**, **openssh** using **cydia**.
 You can do this by addig the `https://build.frida.re` repo in **cydia** and search frida in cydia.
-> 2. In windows/Linux PC, make sure you've install **frida** & **libimobiledevice**.
+2. In windows/Linux PC, make sure you've install **frida** & **libimobiledevice**.
 Visit `https://github.com/libimobiledevice/libimobiledevice/releases` and choose your preferred format and install in C drive or else add it your env variabe.
 Download frida-ios-dump
+
 ```@bash
 git clone https://github.com/AloneMonkey/frida-ios-dump.git
 cd frida-ios-dump
 pip3 install -r requirements.txt
 ```
+
+##  Dumping decrypted IPA file
 Now before going any further, lets test if our frida is working correctly,
 to do that, run this command in pc, this command should list all the installed apps in your iOS app, take note of your target app identifier.
 
