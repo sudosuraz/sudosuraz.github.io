@@ -23,3 +23,41 @@ So lets dive in!
 An iOS app is just like apk in android, its a zipped structured of all code (app binary) and important
 static data files that are required to successfully run an app. The iOS app has .ipa extention and every iDevice
 and iDrivers recognize this extention as app in which contains the actual app binary. 
+
+##  Dumping Decrypted iOS app from idevice
+Every installed app in iPhone decrypts themselve during run, so having decrypted IPA for static analysis 
+makes it easier to understand the code and also helps to uncover more bugs.
+So lets start, first thing you need some require tools to be set.
+> 1. In iOS device, make sure you've installed **frida**, **openssh** using **cydia**.
+You can do this by addig the `https://build.frida.re` repo in **cydia** and search frida in cydia.
+> 2. In windows/Linux PC, make sure you've install **frida** & **libimobiledevice**.
+Visit `https://github.com/libimobiledevice/libimobiledevice/releases` and choose your preferred format and install in C drive or else add it your env variabe.
+Download frida-ios-dump
+```@bash
+git clone https://github.com/AloneMonkey/frida-ios-dump.git
+cd frida-ios-dump
+pip3 install -r requirements.txt
+```
+Now before going any further, lets test if our frida is working correctly,
+to do that, run this command in pc, this command should list all the installed apps in your iOS app, take note of your target app identifier.
+
+```@bash
+frida-ps -Uai
+```
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/0f84ada5-7046-4fca-a7a1-8dc7c76fb1da)
+
+
+Run this command in one terminal 
+```@bash
+iproxy 2222 22
+```
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/1d1324f3-2826-4e67-b487-dd7c15ff4926)
+
+
+Now, lets dump the decrypted app
+```
+python3 dump.py OWASP.iGoat-Swift
+```
+now, in iOS device, open the app and wait.
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/cdbab894-6aac-44c5-bbcd-caa280deaff6)
+
