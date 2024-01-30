@@ -52,8 +52,6 @@ Run this command in one terminal
 iproxy 2222 22
 ```
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/1d1324f3-2826-4e67-b487-dd7c15ff4926)
-Now we can find our target IPA here.
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/7efb6cc5-848e-4486-a9a3-18d9759d6bfd)
 
 
 Now, lets dump the decrypted app
@@ -62,4 +60,6 @@ python3 dump.py OWASP.iGoat-Swift
 ```
 now, in iOS device, open the app and wait.
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/cdbab894-6aac-44c5-bbcd-caa280deaff6)
+Now we can find our target IPA here.
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/7efb6cc5-848e-4486-a9a3-18d9759d6bfd)
 
