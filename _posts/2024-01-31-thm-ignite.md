@@ -6,7 +6,7 @@ date:  2024-01-31
 categories:  [CTF]
 tags:  [TryHackMe,writeup]
 image:
-  path: /assets/img/headers/TryHackMe-Ignite.png
+  path: /assets/img/headers/ignite.png
   alt: ignite
 ---
 #  TryHackMe-Ignite Walkthrough
