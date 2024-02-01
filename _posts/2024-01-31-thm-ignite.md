@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  TryHackMe Ignite
+title:  TryHackMe Ignite Walkthrough
 author:  sudosuraj
-date:  2024-01-24
-categories:  [Walkthrough]
-tags:  [tryhackme, thm-ignite, walkthrough, writeup]
+date:  2024-01-31
+categories:  [CTF]
+tags:  [TryHackMe,writeup]
 image:
   path: /assets/img/headers/TryHackMe-Ignite.png
   alt: ignite
