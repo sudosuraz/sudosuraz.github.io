@@ -9,7 +9,13 @@ image:
   path: /assets/img/headers/opacity.png
   alt: Opacity
 ---  
-
+# TryHackMe | Opacity Writeup
+Hello friend!  
+In this writeup we gonna explore another ctf from TryHackMe called Opacity.  
+Machine Link: [https://tryhackme.com/room/opacity](https://tryhackme.com/room/opacity)  
+Difficulty: Easy  
+## Inforgathering and enumaration  
+After basic Nmap scan, we got open ports  
 
 ```bash
 22/tcp  open  ssh         OpenSSH 8.2p1 Ubuntu 4ubuntu0.5 (Ubuntu Linux; protocol 2.0)
@@ -19,18 +25,27 @@ image:
 ```
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/a3551a43-79fa-4a38-9c41-10f058747744)  
 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/b367ddbe-3c79-4858-9a4e-5baa98984512)  
+Let's directory enumration it and we got access to functionality that was login protected.  
 
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/40d5c38e-250c-45ec-a7c7-7a5695228db3)  
 
+I tried several php revshell upload, but it was taking jpg to be successfully uploaded, so I just need to bypass it,
+just rename php-revshell as follow and we can upload it.
+
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/b367ddbe-3c79-4858-9a4e-5baa98984512)   
+
+##  Initial Shell Access
+After uploading our reverse shell, we can start netcat listner on our local machine and we just need to visit the link.
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/5ced89a4-35ca-4763-b4a5-67829baf9396)  
 
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/3e4ca4aa-c0fd-4808-92ca-7272c86c4031)  
-
+And boom!!!, we got sell access.
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/7da0c35b-f233-4c5a-9a76-734d67cfb2f2)  
-
+##  Privilege Escalation  
+First we are now as www-data user with no permission but just can navigate into file systems. 
+So while exploring the files, i got some interesting file in the `/opt` directory.
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/db479402-0df4-45ea-91e0-8997f18451a7)  
-
+But unfortunetaly we have no permission to explore this, but I managed to copy this file to local machine and I found that this is 
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/1c18f65a-5f5b-4e5a-9882-9be5fe9b5f4e)  
 
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/c918f3eb-e58f-401a-96c5-238eec44c8be)  
