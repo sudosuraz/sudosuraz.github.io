@@ -14,7 +14,7 @@ I'm bug bounty hunter and peneration tester from India.
 This is my personal blogging website, here I post my writeups on CTFs, learning resourses for iOS, Android
 and web bug bounty and also some personal research in field of cyber security.
 
-## Conect with me
+## Connect with me
 - [LinedIn](https://linkedin.com/in/sudosuraj)
 - [GitHub](https://github.com/sudosuraz)
 
