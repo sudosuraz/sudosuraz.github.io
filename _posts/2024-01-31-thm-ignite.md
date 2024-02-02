@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  TryHackMe Ignite Walkthrough
+title:  TryHackMe | Ignite Walkthrough
 author:  sudosuraj
 date:  2024-01-31
 categories:  [CTF]
