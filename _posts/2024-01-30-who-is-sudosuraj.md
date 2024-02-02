@@ -15,7 +15,7 @@ This is my personal blogging website, here I post my writeups on CTFs, learning 
 and web bug bounty and also some personal research in field of cyber security.
 
 ## Connect with me
-- [LinedIn](https://linkedin.com/in/sudosuraj)
+- [LinkedIn](https://linkedin.com/in/sudosuraj)
 - [GitHub](https://github.com/sudosuraz)
 
 ## Contact Me
