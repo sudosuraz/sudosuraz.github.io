@@ -57,16 +57,38 @@ So lets crack it.
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/9e2e6510-3e0d-48c8-a8e9-d4a2149db668)  
   
 After John cracks the password, we can access the database using `keepassxc` command.  
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/68fef76c-7e70-4782-8ede-a27bb746e84d)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/d1329771-c42d-4a52-af33-a2e18e796bc0)  
+ 
 In the database, we got login credentials for the user `sysadmin`.  
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/4189fd9d-da45-49f2-a113-3dab9582e1a8)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/287c3896-2bb0-434a-bf65-fdad9dde4205)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/bdc0a6d1-8bf3-41f5-81e1-0db8c6844f9e)  
+  
+
+
 ### Root Access
-For the root access, we can try several methods, but in the home directory of the user, we have some hints, there is /script folder, which is owned by the **root** user,
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/4ece19df-d26e-407d-8bba-b1bedd6ba3ad)  
+For the root access, we can try several methods, but in the home directory of the user, we have some hints, there is /script folder, which is owned by the **root** user.  
+After exploring this folder, I found **script.php** which is being run by **root** user every minute. 
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/005830c5-c03b-4908-a3ac-b537243630e6)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/8e962869-c027-4464-a686-05857c8dba69)  
 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/61aa4881-680e-4bee-9e16-c5298a0dcd5c)
+So we have no permition to edit ay of this folder's file, but here is a flow, this **root** user owned folder is inside the **sysadmin**'s home directory, so we can rename it, can create our new **scripts** folder and can run our malicious php script to as root user. So I just renamed old folder and created new one with old same name, and inside it, I created script.php with pentestmonkey revshell payload and start a netcat listner on my local machine, and after one minute, boom! we got root shell!  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/99a07235-fc4a-465b-8942-87dc01493ff4)  
 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/e96e4bec-936c-4af2-a76d-9c91a5e5136a)
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/36b6694a-7234-413b-b7d9-106a07695a6d)
+
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/bfcb7a5b-b002-466b-910f-89b4870a60ae)  
+That's all guys, I know there are more methods to root a machine, so share me if you have any different.  
+Signing Out ~ 0xBug  
+## Connect with me
+- [LinedIn](https://linkedin.com/in/sudosuraj)
+- [GitHub](https://github.com/sudosuraz)
+
+## Contact Me
+- sudosuraj@proton.me
+- [Instagram](https://instagram.com/_0xbug)
+- [X](https://x.com/sudosuraj)
+
 
 
 
