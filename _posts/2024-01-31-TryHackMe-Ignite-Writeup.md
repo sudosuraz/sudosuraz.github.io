@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  TryHackMe | Ignite Walkthrough
+title:  TryHackMe | Ignite Writeup
 author:  sudosuraj
 date:  2024-01-31
 categories:  [CTF]
@@ -9,7 +9,7 @@ image:
   path: /assets/img/headers/ignite.png
   alt: ignite
 ---
-#  TryHackMe-Ignite Walkthrough
+#  TryHackMe | Ignite Writeup
 ![image](https://tryhackme-badges.s3.amazonaws.com/0xbug.png)  
 Hello friend!  
 In this write up we gonna explore a THM ctf called Iginte.  
