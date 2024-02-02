@@ -60,7 +60,6 @@ After John cracks the password, we can access the database using `keepassxc` com
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/d1329771-c42d-4a52-af33-a2e18e796bc0)  
  
 In the database, we got login credentials for the user `sysadmin`.  
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/4189fd9d-da45-49f2-a113-3dab9582e1a8)  
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/287c3896-2bb0-434a-bf65-fdad9dde4205)  
 
 
