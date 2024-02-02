@@ -14,7 +14,7 @@ Hello friend!
 In this writeup we gonna explore another ctf from TryHackMe called Opacity.  
 Machine Link: [https://tryhackme.com/room/opacity](https://tryhackme.com/room/opacity)  
 Difficulty: Easy  
-## Inforgathering and enumaration  
+## Info-gathering and enumaration  
 After basic Nmap scan, we got open ports  
 
 ```bash
@@ -32,32 +32,36 @@ Let's directory enumration it and we got access to functionality that was login 
 I tried several php revshell upload, but it was taking jpg to be successfully uploaded, so I just need to bypass it,
 just rename php-revshell as follow and we can upload it.
 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/b367ddbe-3c79-4858-9a4e-5baa98984512)   
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/ced3517f-2a82-4a04-8137-76a7f5a0ac63)
+  
 
 ##  Initial Shell Access
-After uploading our reverse shell, we can start netcat listner on our local machine and we just need to visit the link.
+After uploading our reverse shell, we can start netcat listner on our local machine and we just need to visit the link.  
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/5ced89a4-35ca-4763-b4a5-67829baf9396)  
 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/3e4ca4aa-c0fd-4808-92ca-7272c86c4031)  
-And boom!!!, we got sell access.
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/7da0c35b-f233-4c5a-9a76-734d67cfb2f2)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/3e4ca4aa-c0fd-4808-92ca-7272c86c4031)   
+And boom!!!, we got sell access.  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/3dec41a8-62a9-4e3c-91c1-0830c828eb4d)  
+ 
 ##  Privilege Escalation  
-First we are now as www-data user with no permission but just can navigate into file systems. 
-So while exploring the files, i got some interesting file in the `/opt` directory.
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/db479402-0df4-45ea-91e0-8997f18451a7)  
-But unfortunetaly we have no permission to explore this, but I managed to copy this file to local machine and I found that this is 
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/1c18f65a-5f5b-4e5a-9882-9be5fe9b5f4e)  
-
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/c918f3eb-e58f-401a-96c5-238eec44c8be)  
-
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/204c966e-d786-4959-a999-c54fb598f478)  
-
-![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/21f3a658-626d-43b1-b8ab-371eb5d87adc)  
-
+###  User Access
+First we are now as www-data user with no permission but just can navigate into file systems.   
+So while exploring the files, i got some interesting file in the `/opt` directory.  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/9490820c-a6f6-40e4-b35c-d39a9ffbe46c)  
+But unfortunetaly we have no permission to explore this, but I managed to copy this file to local machine.  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/7fbc3bcb-1ce1-4c8d-b921-9094bbd27b13)  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/eb21bf44-d60d-4f72-ab25-d694722d1763)  
+  
+And I found that this is Keepass Database file, Keepass KDBX is the file format used by KeePass, a free and open-source password manager. It's essentially a container that securely stores all sensitive information, like passwords, login credentials, and other confidential data, but access to this was password protected, so after some research I found that John the Ripper is capable to crack it's password.  
+So lets crack it.  
+![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/9e2e6510-3e0d-48c8-a8e9-d4a2149db668)  
+  
+After John cracks the password, we can access the database using `keepassxc` command.  
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/68fef76c-7e70-4782-8ede-a27bb746e84d)  
-
+In the database, we got login credentials for the user `sysadmin`.  
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/4189fd9d-da45-49f2-a113-3dab9582e1a8)  
-
+### Root Access
+For the root access, we can try several methods, but in the home directory of the user, we have some hints, there is /script folder, which is owned by the **root** user,
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/4ece19df-d26e-407d-8bba-b1bedd6ba3ad)  
 
 ![image](https://github.com/sudosuraz/sudosuraz.github.io/assets/81553118/61aa4881-680e-4bee-9e16-c5298a0dcd5c)
