@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  TryHackMe Road WriteUp
+title:  TryHackMe | Road WriteUp
 author:  sudosuraj
 date:  2024-02-01
 categories:  [CTF]
@@ -9,7 +9,7 @@ image:
   path: /assets/img/headers/road.png
   alt: Road
 ---
-#  TryHackMe - Road WriteUp 
+#  TryHackMe | Road WriteUp 
 ![image](https://tryhackme-badges.s3.amazonaws.com/0xbug.png)  
 Hello Friend!
 In this writeup we gonna walkthrough TryHackMe CTF called Road.  
