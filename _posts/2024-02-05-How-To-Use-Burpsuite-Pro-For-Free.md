@@ -6,7 +6,7 @@ date:  2024-02-05
 categories:  [bugbounty]
 tags:  [bugbounty, bugbountytips]
 image:
-  path: /assets/img/headers/burpsuite-pro.png
+  path: /assets/img/headers/Burp-Suite-logo.png
   alt: Burpsuite Pro
 ---
 #  How To Use Burpsuite Pro For Free
