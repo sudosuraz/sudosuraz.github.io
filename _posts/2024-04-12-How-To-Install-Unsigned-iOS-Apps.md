@@ -45,6 +45,3 @@ Now, open the terminal app in iOS device and run this command:
 uicache -a
 ```
 Now you'll be able to see the app icon on home screen!
-
-
-
