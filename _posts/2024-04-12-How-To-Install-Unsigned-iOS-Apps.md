@@ -6,8 +6,8 @@ date:  04-12-2024
 categories:  [iOS]
 tags:  [iOS, Mobile Application, bugbounty]
 image:
-  path: /assets/img/headers/header1-1.jpg
-  alt: ios pentesting
+  path: /assets/img/headers/ios.jpg
+  alt: "ios"
 ---
 
 # How to install unsigned iOS apps
